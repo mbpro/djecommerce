@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+{%load static %}
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Login Form</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<!-- LINEARICONS -->
+		<link rel="stylesheet" href="{% static 'fonts/linearicons/style.css' %}">
+
+		<!-- STYLE CSS -->
+		<link rel="stylesheet" href="{%  static 'css/style(2).css' %}">
+	</head>
+
+	<body>
+
+		<div class="wrapper">
+			<div class="inner">
+				<img src="{% static 'images/image-1.png' %}" alt="" class="image-1">
+				<form action="" method="POST">
+                   {% csrf_token %}
+					<h3>Login Account?</h3>
+
+					<div class="form-holder">
+						<span class="lnr lnr-envelope"></span>
+						{{form.email}}
+					</div>
+					<div class="form-holder">
+						<span class="lnr lnr-lock"></span>
+						{{form.password}}
+					</div>
+
+					<button type="submit">
+						<span>Login</span>||
+					</button>
+                     <a href="{%url 'userauths:sign-up'%}">Register</a>||
+                    <a href="{%url 'userauths:emailpassword'%}">Forgot Password</a>
+				</form>
+
+				<img src="{% static 'images/image-2.png' %}" alt="" class="image-2">
+			</div>
+
+		</div>
+
+
+
+		<script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+		<script src="{% static 'js/main(2).js' %}"></script>
+	</body>
+</html>
